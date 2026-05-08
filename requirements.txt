@@ -1,0 +1,13 @@
+langchain-google-genai
+langgraph
+pydantic
+python-dotenv
+langchain
+langchain-core
+pydantic-settings
+streamlit
+pillow
+fastapi
+uvicorn
+python-multipart
+rich

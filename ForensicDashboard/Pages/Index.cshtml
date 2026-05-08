@@ -1,0 +1,93 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "AAA & Farmers - Forensic AI Dashboard";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow-lg border-0">
+                <div class="card-header bg-dark text-white p-4">
+                    <h2 class="mb-0"><i class="bi bi-shield-check"></i> Forensic AI Claims Inspector</h2>
+                    <p class="text-light mb-0">Powered by Gemini Spatial Engine</p>
+                </div>
+                <div class="card-body p-5">
+                    <form method="post" enctype="multipart/form-data">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Case/Claim Identifier</label>
+                                <input type="text" asp-for="CaseId" class="form-control form-control-lg" placeholder="e.g. CLAIM-2026-X45" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Evidence Image</label>
+                                <input type="file" asp-for="Upload" class="form-control form-control-lg" accept="image/*" required />
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-xl px-5 py-3 shadow" id="uploadBtn">
+                                <i class="bi bi-cpu-fill"></i> RUN AI INSPECTION
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="loading" class="text-center mt-4 d-none">
+                        <div class="spinner-border text-primary" role="status"></div>
+                        <p class="mt-2 text-muted">Analyzing evidence spatial mapping...</p>
+                    </div>
+
+                    @if (Model.Result != null)
+                    {
+                        <div class="mt-5 animate__animated animate__fadeIn">
+                            <hr />
+                            <div class="row align-items-center">
+                                <div class="col-md-4 text-center">
+                                    @if (!string.IsNullOrEmpty(Model.ImagePreview))
+                                    {
+                                        <img src="@Model.ImagePreview" class="img-fluid rounded shadow mb-3" style="max-height: 200px;" alt="Analyzed Evidence" />
+                                    }
+                                    <div class="display-1 fw-bold @(Model.Result.FinalScore > 70 ? "text-success" : "text-danger")">
+                                        @Model.Result.FinalScore<small class="fs-4">%</small>
+                                    </div>
+                                    <div class="h4 text-muted">Quality Score</div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h3 class="fw-bold">Decision: <span class="badge @(Model.Result.FinalDecision.Contains("Accept") ? "bg-success" : "bg-warning")">@Model.Result.FinalDecision</span></h3>
+                                    <p class="lead text-secondary">@Model.Result.DetailedAnalysis</p>
+                                </div>
+                            </div>
+
+                            @if (Model.Result.Detections.Any())
+                            {
+                                <div class="mt-4">
+                                    <h5><i class="bi bi-pin-map-fill"></i> AI Spatial Detections</h5>
+                                    <div class="list-group">
+                                        @foreach (var det in Model.Result.Detections)
+                                        {
+                                            <div class="list-group-item">
+                                                <strong>@det.Label:</strong> @det.Description
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="card-footer bg-light text-center py-3">
+                    <small class="text-muted">For internal use by AAA and Farmers Insurance adjusters only.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.querySelector('form').onsubmit = function() {
+            document.getElementById('uploadBtn').disabled = true;
+            document.getElementById('loading').classList.remove('d-none');
+        };
+    </script>
+}

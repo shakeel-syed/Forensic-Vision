@@ -1,0 +1,14 @@
+C:\backup\LearnAI\dotnet_client\bin\Debug\net8.0\ForensicClientDemo.exe
+C:\backup\LearnAI\dotnet_client\bin\Debug\net8.0\ForensicClientDemo.deps.json
+C:\backup\LearnAI\dotnet_client\bin\Debug\net8.0\ForensicClientDemo.runtimeconfig.json
+C:\backup\LearnAI\dotnet_client\bin\Debug\net8.0\ForensicClientDemo.dll
+C:\backup\LearnAI\dotnet_client\bin\Debug\net8.0\ForensicClientDemo.pdb
+C:\backup\LearnAI\dotnet_client\obj\Debug\net8.0\ForensicClientDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\backup\LearnAI\dotnet_client\obj\Debug\net8.0\ForensicClientDemo.AssemblyInfoInputs.cache
+C:\backup\LearnAI\dotnet_client\obj\Debug\net8.0\ForensicClientDemo.AssemblyInfo.cs
+C:\backup\LearnAI\dotnet_client\obj\Debug\net8.0\ForensicClientDemo.csproj.CoreCompileInputs.cache
+C:\backup\LearnAI\dotnet_client\obj\Debug\net8.0\ForensicClientDemo.dll
+C:\backup\LearnAI\dotnet_client\obj\Debug\net8.0\refint\ForensicClientDemo.dll
+C:\backup\LearnAI\dotnet_client\obj\Debug\net8.0\ForensicClientDemo.pdb
+C:\backup\LearnAI\dotnet_client\obj\Debug\net8.0\ForensicClientDemo.genruntimeconfig.cache
+C:\backup\LearnAI\dotnet_client\obj\Debug\net8.0\ref\ForensicClientDemo.dll
