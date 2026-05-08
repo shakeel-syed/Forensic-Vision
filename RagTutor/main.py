@@ -5,8 +5,10 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
-# Set your API key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBg45dSMf0ur3bC0CSlay2hGtl3w7RXgP8"
+from dotenv import load_dotenv
+load_dotenv() # Load from .env file
+
+# API key will now be read from os.environ["GOOGLE_API_KEY"] automatically by LangChain
 
 # 1. Create Google embedding model
 text_data = [

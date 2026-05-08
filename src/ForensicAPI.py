@@ -33,7 +33,7 @@ class InspectionResponse(BaseModel):
 
 # Initialize FastAPI
 api = FastAPI(
-    title="Forensic Spatial API",
+    title="Forensic Vision API",
     description="Professional REST service for Law Enforcement to map forensic evidence and validate quality.",
     version="1.1.0"
 )

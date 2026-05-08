@@ -165,7 +165,7 @@ app = workflow.compile()
 
 if __name__ == "__main__":
     console.clear()
-    console.print(Panel.fit("🚀 [bold white]Forensic Evidence Mapping System[/bold white] 🚀", style="bold cyan"))
+    console.print(Panel.fit("🚀 [bold white]Forensic Vision System[/bold white] 🚀", style="bold cyan"))
 
     final_result = app.invoke({
         "image_path": "assets/sample.jpg", 

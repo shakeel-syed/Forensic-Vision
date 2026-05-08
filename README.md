@@ -1,4 +1,4 @@
-# Forensic Evidence Mapping System
+# Forensic Vision
 
 This project implements an automated forensic image quality inspection and spatial mapping system using **LangGraph** and **Google Gemini AI**. It is designed to analyze images, score their quality, and identify specific forensic points of interest (Scars, Marks, Tattoos, or damage) through an iterative process.
 
@@ -17,7 +17,6 @@ The project has been organized into logical directories:
 - **`dotnet_client/`**: A C# (.NET) client demonstration for interacting with the Forensic API.
 - **`ForensicDashboard/`**: A full .NET web application for managing forensic reports.
 - **`RagTutor/`**: A RAG (Retrieval-Augmented Generation) subsystem for forensic knowledge.
-- **`deploy/`**: (Optional) Configuration for deployment.
 
 ## Key Components
 
